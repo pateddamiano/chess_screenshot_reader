@@ -1,6 +1,0 @@
-archive/
-YOLO_detection\images
-YOLO_detection\runs
-YOLO_detection\labels
-YOLO_detection\yolo11n.pt
-YOLO_detection\yolo5xu.pt
