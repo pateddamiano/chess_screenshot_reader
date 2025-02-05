@@ -6,10 +6,10 @@ def read_image(image_path):
     if image is None:
         raise ValueError(f"Failed to read image from {image_path}")
 
-    # resize image to at most 500 pixels in the longest dimension
+    # resize image to at most 700 pixels in the longest dimension
     height, width = image.shape[:2]
     longest_side = max(height, width)
-    scale_factor = 600 / longest_side
+    scale_factor = 700 / longest_side
     new_height = int(height * scale_factor)
     new_width = int(width * scale_factor)
     image = cv2.resize(image, (new_width, new_height))

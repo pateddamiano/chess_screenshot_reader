@@ -29,13 +29,17 @@ class Detector:
             The resulting detections are then converted into a list of dictionaries for easier processing and analysis.
         """
         
-        results = self.model.predict(frame, conf=0.5)
+        results = self.model.predict(frame, conf=0.8)
         cls_names = results[0].names
 
         detections = []
         boxes = results[0].boxes.xyxy.tolist()
         scores = results[0].boxes.conf.tolist()
         classes = results[0].boxes.cls.tolist()
+        
+        if 12.0 not in classes:
+            print("Could not find board in image.")
+            quit()
         
         for box, score, cls in zip(boxes, scores, classes):
             x1, y1, x2, y2 = box
