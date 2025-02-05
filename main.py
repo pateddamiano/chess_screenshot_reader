@@ -15,7 +15,7 @@ def main():
     img_path = sys.argv[1]
     img = read_image(img_path)
     
-    detector = Detector(model_path='model\\best.pt')
+    detector = Detector(model_path='model\\best_endToEnd_model2.pt')
 
     detections = detector.detect(img)
     annotated_frame = detector.draw_annotations(img.copy(), detections)
@@ -23,11 +23,7 @@ def main():
     # once the new model is trained, crop the chessboard to only include the board and scale bboxes to fit the new crop
     
     FEN_generator = fen_generator.FENGenerator(img)
-    squares = FEN_generator.crop_board_into_squares()
-    
-    # cv2.imshow('Annotated Frame', annotated_frame)
-    # cv2.waitKey(0)
-    # cv2.destroyAllWindows()
+    squares = FEN_generator.crop_board_into_squares(detections)
     
     # # Display all 8x8 squares as a chessboard
     # fig, axes = plt.subplots(8, 8, figsize=(20, 20))
@@ -45,6 +41,10 @@ def main():
     fen = FEN_generator.generate_fen(detections, squares)
     print('FEN: \n%s' % fen)
 
+    cv2.imshow('Annotated Frame', annotated_frame)
+    cv2.waitKey(0)
+    cv2.destroyAllWindows()
+    
 if __name__ == "__main__":
     main()
 

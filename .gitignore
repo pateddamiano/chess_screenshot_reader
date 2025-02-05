@@ -9,3 +9,6 @@
 YOLO_detection/yolo11n.pt
 YOLO_detection/yolov5xu.pt
 experiments/feature_extraction.ipynb
+/experiments/sample_profile_pictures
+/YOLO_detection/previous_models
+*.pt

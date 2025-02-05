@@ -29,7 +29,7 @@ class Detector:
             The resulting detections are then converted into a list of dictionaries for easier processing and analysis.
         """
         
-        results = self.model.predict(frame)
+        results = self.model.predict(frame, conf=0.5)
         cls_names = results[0].names
 
         detections = []
