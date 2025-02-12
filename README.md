@@ -42,9 +42,10 @@ chess-screenshot-detection/
 ```
 
 ## Installation
-1. Clone the Repository:
-2. Set Up a Virtual Environment & Install Dependencies (`pip install -r requirements.txt`)
-3. Use the trained model to predict the board bounding box from a full screenshot:
+1. Clone the Repository.
+2. Download the [model](https://huggingface.co/pdamiano/chess_screenshot_detection/tree/main) and create a ./model folder. Place the model in that folder. 
+3. Set Up a Virtual Environment & Install Dependencies (`pip install -r requirements.txt`)
+4. Use the trained model to predict the board bounding box from a full screenshot:
 
 ```
 python main.py <path_to_screenshot>.png
