@@ -12,3 +12,8 @@ experiments/feature_extraction.ipynb
 /experiments/sample_profile_pictures
 /YOLO_detection/previous_models
 *.pt
+test_images/test1.PNG
+test_images/test2.PNG
+test_images/test3.PNG
+test_images/test4.PNG
+test_images/test5.PNG
